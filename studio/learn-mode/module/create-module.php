@@ -2,6 +2,15 @@
 <?php
     
     $contentID = $_GET['contentID'];
+
+    session_start();
+
+    if(isset($_SESSION["email"]) && isset($_SESSION["password"])){
+
+    }else{
+        header("Location: ../../home");
+        exit();
+    }
     
 ?>
 
@@ -219,6 +228,7 @@
                     contentID:contentID
                 },
                 success:function(response){
+                    console.log(response);
                     if(response==10){
                         window.location.href = "../module/index.php?contentID="+contentID;
                     }else{

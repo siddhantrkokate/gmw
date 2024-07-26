@@ -1,15 +1,6 @@
 <?php
 
-$server = "127.0.0.1:3306";
-    $user = "u919348121_siddhant";
-    $password = "Collegeprojecthaiye12@";
-    $db = "u919348121_GMW";
-    
-    $conn = mysqli_connect($server, $user, $password, $db);
-    
-    if (!$conn) {
-        die("Connection not established!");
-    }
+include("/gmw/api/connection.php");
 
 if (isset($_POST["contentID"]) && isset($_POST["moduleName"])) {
     
