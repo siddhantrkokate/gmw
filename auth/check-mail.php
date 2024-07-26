@@ -1,12 +1,8 @@
 <?php
-include("../resources/connection.php");
+include("/gmw/api/connection.php");
 
 if (isset($_POST["email"])) {
     $email = $_POST["email"];
-    $password = $_POST["password"];
-    
-    // Hash the password
-    $hashed_password = $password;
     
     // Prepare select statement
     $stmt = $conn->prepare("SELECT * FROM users WHERE user_email = ?");

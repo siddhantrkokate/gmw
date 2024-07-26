@@ -388,9 +388,9 @@
           $(".toast").text("Give me a minute.").fadeIn(400).delay(3000).fadeOut(400).css({
                                         "background-color":"#2596be"
                                     });
-          
+          console.log(10);
           $.ajax({
-                url:'check-mail.php',
+                url:'/gmw/auth/check-mail.php',
                 type:'POST',
                 data:{
                     email:email

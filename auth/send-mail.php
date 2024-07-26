@@ -1,6 +1,6 @@
 <?php
 // Database connection details
-include("../resources/connection.php");
+include("/gmw/api/connection.php");
 
 // Check connection
 if (!$conn) {
