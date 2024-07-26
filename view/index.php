@@ -592,14 +592,14 @@ if (mysqli_num_rows($q1) > 0) {
                             },
                             success:function(response){
                                 console.log("liked!");
-                                if(response==10){
-                                    $(".like").hide();
-                                    $(".unlike").show();
-                                    showToastMessage("Liked");
-                                }else{
+                                if(response==20){
                                     $(".like").show();
                                     $(".unlike").hide();
                                     showToastMessage("Something went wrong. Try Again!");
+                                }else{
+                                    $(".like").hide();
+                                    $(".unlike").show();
+                                    showToastMessage("Liked");
                                 }
                             }
                         })
@@ -616,14 +616,14 @@ if (mysqli_num_rows($q1) > 0) {
                             },
                             success:function(response){
                                 console.log("unliked!");
-                                if(response==10){
-                                    $(".like").show();
-                                    $(".unlike").hide();
-                                    showToastMessage("Disliked");
-                                }else{
+                                if(response==20){
                                     $(".like").hide();
                                     $(".unlike").show();
                                     showToastMessage("Something went wrong. Please Try Again!");
+                                }else{
+                                    $(".like").show();
+                                    $(".unlike").hide();
+                                    showToastMessage("Disliked");
                                 }
                             }
                         })
