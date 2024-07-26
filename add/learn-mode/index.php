@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+
+    session_start();
+
+    if(isset($_SESSION["email"]) && isset($_SESSION["password"])){
+
+    }else{
+        header("Location: ../../home");
+        exit();
+    }
+?>
+
 <head>
 
     <!-- basic meta tags -->

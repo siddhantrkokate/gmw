@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+
+<?php
+
+    session_start();
+
+    if(isset($_SESSION["email"]) && isset($_SESSION["password"])){
+
+    }else{
+        header("Location: ../../home");
+        exit();
+    }
+?>
+
 <html lang="en">
 
 <head>
@@ -6,7 +19,7 @@
     <!-- basic meta tag -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Quick Read Content - Guide Me Web</title>
+    <title>Add - Quick Read - Guide Me Web</title>
     <!-- google icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
