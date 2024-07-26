@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - nismwala.com</title>
+    
+    <!-- Fonts Awesome -->
+    <link href="../../fontawesome-free-6.5.2-web/css/fontawesome.css" rel="stylesheet" />
+    <link href="../../fontawesome-free-6.5.2-web/css/brands.css" rel="stylesheet" />
+    <link href="../../fontawesome-free-6.5.2-web/css/solid.css" rel="stylesheet" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- CSS -->
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        /* Fonts */
+        .reddit-sans-600 {
+            font-family: "Reddit Sans", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        #courses-primary-container {
+            padding: 15px 12%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #header-primary-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #fff;
+        }
+
+        /* General Responsive Styles */
+        
+        @media only screen and (min-width: 1001px){
+            #courses-primary-container{
+                padding: 15px 25%;
+            }
+        }
+        
+        @media only screen and (max-width: 1000px) {
+            #courses-primary-container {
+                padding: 15px 3%;
+            }
+        }
+
+        @media only screen and (max-width: 4800px) {
+            #courses-thumbnail-container {
+                max-width: 100%;
+            }
+
+            #courses-thumbnail {
+                width: 100%;
+                border: 0.1px solid #d1d1d1;
+                border-radius: 5px;
+            }
+
+            #courses-title {
+                font-size: 20px;
+                margin-top: 30px;
+                font-weight: 500;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            #courses-description {
+                font-size: 14px;
+                color: #7F8C8D;
+                word-spacing: 4px;
+                text-align: center;
+            }
+
+            #courses-button-container {
+                display: flex;
+                flex-direction: row;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 100%;
+                padding-bottom: 20px;
+                border-bottom: 0.1px solid #d1d1d1;
+                margin-bottom: 20px;
+            }
+
+            #courses-price-button {
+                padding: 15px 0;
+                border: 0.1px solid #3c495b;
+                color: #3c495b;
+                border-radius: 5px;
+                margin-right: 5px;
+                text-align: center;
+                width: 100%;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            #coueses-buy-button {
+                background-color: #3c495b;
+                color: white;
+                border: 0.1px solid #3c495b;
+                border-radius: 5px;
+                padding: 15px 0;
+                font-size: 14px;
+                width: 100%;
+                margin-left: 5px;
+                cursor: pointer;
+                text-align: center;
+            }
+
+            #coueses-buy-button:hover {
+                background-color: white;
+                color: #3c495b;
+            }
+
+            #courses-usp-containers {
+                font-size: 14px;
+                word-spacing: 3px;
+                padding-bottom: 20px;
+                width: 100%;
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+
+            #course-usp {
+                margin-bottom: 10px;
+            }
+
+            #courses-brochure-container {
+                display: flex;
+                flex-direction: row;
+                text-align: left;
+                width: 100%;
+                border-top: 0.1px solid #d1d1d1;
+                padding-top: 20px;
+                font-size: 14px;
+                color: #566573;
+                padding-bottom: 20px;
+                border-bottom: 0.1px solid #d1d1d1;
+                margin-bottom: 20px;
+                cursor: pointer;
+            }
+
+            #courses-brochure-download-icon {
+                margin-left: auto;
+                font-weight: 300;
+                padding: 0 15px;
+            }
+
+            #courses-brochure-text {
+                padding-left: 15px;
+            }
+
+            #courses-faq-heading {
+                font-weight: 600;
+                text-align: center;
+                font-size: 17px;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+
+            .courses-faq-q-container {
+                width: 100%;
+                margin-top: 20px;
+                padding-bottom: 20px;
+                border-bottom: 0.1px solid #d1d1d1;
+            }
+
+            .courses-faq-q-question-container {
+                display: flex;
+                flex-direction: row;
+                font-size: 15px;
+                font-weight: 500;
+                width: 100%;
+                cursor: pointer;
+            }
+
+            .courses-faq-q-more-icon-container {
+                margin-left: auto;
+                padding-right: 15px;
+            }
+
+            .courses-faq-q-answer-container {
+                display: none;
+                font-size: 14px;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                color: #566573;
+            }
+        }
+
+        /* Responsive Container Widths */
+        #con {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 1351px) and (max-width: 2000px) {
+            #con {
+                width: 60%;
+            }
+        }
+
+        @media only screen and (min-width: 1251px) and (max-width: 1350px) {
+            #con {
+                width: 70%;
+            }
+        }
+
+        @media only screen and (min-width: 1151px) and (max-width: 1250px) {
+            #con {
+                width: 80%;
+            }
+        }
+
+        @media only screen and (min-width: 1051px) and (max-width: 1150px) {
+            #con {
+                width: 90%;
+            }
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $('.courses-faq-q-container').click(function(){
+                $(this).find('.courses-faq-q-answer-container').slideToggle();
+                $(this).find('.fa-chevron-down').toggleClass('fa-chevron-up');
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- basic meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header - nismwala.com</title>
+    
+    <!-- fontsawesome -->
+    <link href="../fontawesome-free-6.5.2-web/css/fontawesome.css" rel="stylesheet" />
+    <link href="../fontawesome-free-6.5.2-web/css/brands.css" rel="stylesheet" />
+    <link href="../fontawesome-free-6.5.2-web/css/solid.css" rel="stylesheet" />
+    
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- google fonts poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- css -->
+    <style>
+        body {
+            margin: 0px;
+        }
+        
+        /* fonts */
+        .reddit-sans-600 {
+            font-family: "Reddit Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+        }
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        /* - - - - - - - - - - - - - - - - - - - - - - - - - - Header - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        
+        /* header */
+        #header-primary-container {
+            border-bottom: 0.1px solid #d1d1d1; /* bottom border of header */
+            padding: 10px 0px; /* padding from top and bottom */
+        }
+        
+        #header-secondary-container {
+            display: flex; /* display all elements of header in single row */
+            flex-direction: row;
+            padding: 0px 12%; /* padding from left and right */
+        }
+        
+        /* header logo */
+        #header-logo-container {
+            width: 70px; /* width of logo */
+            cursor: pointer; /* for showing pointor when user will hover on the logo */
+        }
+        
+        #header-logo-first {
+            /* first part of the logo */
+            font-size: 22px;
+            font-weight: 600;
+            color: #3c4852;
+        }
+        
+        #header-logo-second {
+            /* second part of the logo */
+            font-size: 11px;
+            color: #96a9b4;
+            font-weight: 500;
+        }
+        
+        /* header navigation menu's */
+        #header-nav-container {
+            display: flex;
+            flex-direction: row;
+            font-size: 13px;
+            color: #637984;
+            cursor: pointer;
+            margin-left: 40px; /* margin from logo */
+        }
+        
+        .header-nav-menu {
+            /* for aligning all menu vertically center */
+            align-content: center;
+            justify-content: center;
+            margin-left: 40px; /* margin between each menu */
+        }
+        
+        .fa-laptop,
+        .fa-newspaper,
+        .fa-house {
+            /* padding between menu name and its icon */
+            padding-right: 10px;
+        }
+        
+        .my-course-nav:hover,
+        .course-nav:hover,
+        .blogs-nav:hover {
+            /* will react when user will hover on any menu */
+            color: #3c4852;
+        }
+        
+        /* authentication buttons */
+        #header-authentication-btns-container {
+            margin-left: auto; /* align button to right to the page */
+            display: flex;
+            flex-direction: row; /* displaying in single row */
+            font-size: 15px;
+            justify-content: center;
+            align-items: center; /* align verically center */
+            color: #3c495b;
+            font-weight: 500;
+        }
+        
+        #header-auth-login {
+            /* login button */
+            padding: 3px 15px;
+            border-radius: 5px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        #header-auth-login:hover {
+            /* login button hover effect */
+            background-color: #f0f4f7;
+        }
+        
+        #header-auth-register {
+            /* registration button */
+            padding: 3px 15px;
+            border-radius: 5px;
+            border: 0.1px solid #3c4852;
+            cursor: pointer;
+        }
+        
+        #header-auth-register:hover {
+            background-color: #f0f4f7;
+        }
+        
+        /* - - - - - - - - -  Profile - - - - - - - - - */
+        #header-profile-icon{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            background-color: #f1f1f1;
+            border-radius: 25px;
+            border: 1px solid #000;
+            color: #000;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            margin-top: 4px;
+            cursor: pointer;
+        }
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+        
+        
+        
+        
+        /* - - - - - - - - - - - - - - - - - - - - - - - - -  Login - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        
+        /* Slide-in login form CSS */
+        #login-form-container {
+            position: fixed;
+            top: 0;
+            right: -200%;
+            width: 500px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease-in-out;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        #login-form-container.active {
+            right: 0;
+        }
+
+        #login-form-close {
+            align-self: flex-end;
+            cursor: pointer;
+            font-size: 30px;
+            color: #3c495b;
+        }
+
+        #login-form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        #login-form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #login-form button {
+            padding: 10px;
+            background-color: #3c495b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #login-form button:hover {
+            background-color: #637984;
+        }
+
+        /* Overlay CSS */
+        #overlay-login {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1000;
+            display: none;
+        }
+
+        #overlay-login.active {
+            opacity: 1;
+            display: block;
+        }
+        
+        #login-form-content-container{
+            padding-top: 50px;
+            max-width: 100%;
+        }
+        
+        #login-form-sec-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items within the container */
+            width: 100%; /* Ensure the container takes full width */
+        }
+        
+        #auth-heading{
+            font-size: 22px;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+        
+        #login-name-feild,
+        #login-password-feild{
+            padding: 15px 20px;
+            width: 85%;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            outline: none;
+            border: 0.1px solid #d1d1d1;
+        }
+        
+        
+        #login-rect-text{
+            color: red;
+            font-size: 11px;
+            text-align: right;
+            width: 85%;
+            display: none;
+        }
+        
+        #login-submit-btn{
+            background-color: #3c495b;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            width: 85%;
+            border-radius: 5px;
+            font-size: 13px;
+            margin-top: 10px;
+            border: 0.1px solid #3c495b;
+            cursor: pointer;
+        }
+        
+        #login-submit-btn:hover{
+            border: 0.1px solid #3c495b;
+            color: #3c495b;
+            background-color: white;
+        }
+        
+        #forgot-password-link{
+            margin-top: 20px;
+            font-size: 11px;
+            color: #808B96;
+            font-weight: 300;
+        }
+        
+                /* Slide-in register form CSS */
+        #register-form-container {
+            position: fixed;
+            top: 0;
+            right: -200%;
+            width: 500px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease-in-out;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        #register-form-container.active {
+            right: 0;
+        }
+
+        #register-form-close {
+            align-self: flex-end;
+            cursor: pointer;
+            font-size: 30px;
+            color: #3c495b;
+        }
+
+        #register-form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        #register-form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #register-form button {
+            padding: 10px;
+            background-color: #3c495b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #register-form button:hover {
+            background-color: #637984;
+        }
+
+        /* Overlay CSS */
+        #overlay-register {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1000;
+            display: none;
+        }
+
+        #overlay-register.active {
+            opacity: 1;
+            display: block;
+        }
+        
+        #register-form-container{
+            max-width: 100%;
+        }
+        
+        #registration-form-screen-1-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items within the container */
+            width: 100%; /* Ensure the container takes full width */
+        }
+        
+        #registration-heading{
+            padding: 50px 0px;
+            font-size: 22px;
+            text-align: center;
+        }
+        
+        #registration-email-feild{
+            padding: 15px 20px;
+            width: 85%;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            outline: none;
+            border: 0.1px solid #d1d1d1;
+        }
+        
+        #registration-phone-feild-container{
+            display: flex;
+            flex-direction: row;
+            width: 85%;
+            border: 0.1px solid #d1d1d1;
+            border-radius: 5px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+        }
+        
+        #registration-phone-feild-flag-container{
+            width: 50px;
+            height: 20px;
+        }
+        
+        #registration-phone-input-container{
+            width: 100%;
+        }
+        
+        #registration-phone-feild{
+            border: 0px solid red;
+            outline: none;
+        }
+        
+        #registration-screen-1-rect-text{
+            color: red;
+            font-size: 11px;
+            text-align: right;
+            width: 85%;
+            display: none;
+        }
+        
+        #registration-screen-1-next-button{
+            background-color: #3c495b;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            width: 85%;
+            border-radius: 5px;
+            font-size: 13px;
+            margin-top: 10px;
+            border: 0.1px solid #3c495b;
+        }
+        
+        
+        /* screen 2 */
+        
+        #registration-form-screen-2-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            display: none;
+        }
+        
+        #registration-verfication-code-feild{
+            padding: 15px 20px;
+            width: 85%;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            outline: none;
+            border: 0.1px solid #d1d1d1;
+        }
+        
+        #registration-screen-2-rect-text{
+            color: green;
+            font-size: 11px;
+            text-align: right;
+            width: 85%;
+            display: none;
+        }
+        
+        #registration-screen-2-verify-button{
+            background-color: #3c495b;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            width: 85%;
+            border-radius: 5px;
+            font-size: 13px;
+            margin-top: 10px;
+            border: 0.1px solid #3c495b;
+        }
+        
+        #registration-screen-2-back-to-screen-1-button{
+            background-color: white;
+            color: #3c495b;
+            padding: 15px 20px;
+            text-align: center;
+            width: 85%;
+            border-radius: 5px;
+            font-size: 13px;
+            margin-top: 10px;
+            border: 0.1px solid #3c495b;
+        }
+        
+        /* screen 3 */
+        
+        #registration-form-screen-3-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items within the container */
+            width: 100%; /* Ensure the container takes full width */
+            display: none;
+        }
+        
+        #registration-password-feild{
+            padding: 15px 20px;
+            width: 85%;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            outline: none;
+            border: 0.1px solid #d1d1d1;
+        }
+        
+        #registration-screen-3-rect-text{
+            color: red;
+            font-size: 11px;
+            text-align: right;
+            width: 85%;
+            display: none;
+        }
+        
+        #registration-screen-3-next-button{
+            background-color: #3c495b;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            width: 85%;
+            border-radius: 5px;
+            font-size: 13px;
+            margin-top: 10px;
+            border: 0.1px solid #3c495b;
+        }
+        
+        /* screen 4 */
+        
+        #registration-form-screen-4-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items within the container */
+            width: 100%; /* Ensure the container takes full width */
+            display: none;
+        }
+        
+        #registration-fname-feild,
+        #registration-lname-feild{
+            padding: 15px 20px;
+            width: 85%;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            outline: none;
+            border: 0.1px solid #d1d1d1;
+        }
+        
+        #registration-screen-4-save-button{
+            background-color: #3c495b;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            width: 85%;
+            border-radius: 5px;
+            font-size: 13px;
+            margin-top: 10px;
+            border: 0.1px solid #3c495b;
+        }
+        
+        #registration-screen-4-rect-text{
+            color: red;
+            font-size: 11px;
+            text-align: right;
+            width: 85%;
+            display: none;
+        }
+        
+        /* screen 5 */
+        
+        #registration-form-screen-5-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items within the container */
+            width: 100%; /* Ensure the container takes full width */
+            display: none;
+        }
+    
+        #registration-status-icon{
+            margin-top: 130px;
+            min-width: 50px;
+            min-height: 50px;
+            max-width: 50px;
+            background-color: green;
+            color: white;
+            border-radius: 25px;
+            font-size: 25px;
+            text-align:center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #registration-status-text{
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        
+                /* - - - - - - - - - - - - - - - - - - - - - - - - - Bottom navigation menu - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        
+        /* bottom navigation = display non in screen more than 799px */
+        #bottom-nav-container {
+            display: none;
+        }
+        
+        /* bottom navigation css when screen < 798 px */
+        @media only screen and (max-width: 798px) {
+            
+            /* display non header navigation */
+            #header-nav-container {
+                display: none;
+            }
+            
+            /* bottom navigation css */
+            #bottom-nav-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around; /* Adjusts spacing between items */
+                align-items: center; /* Aligns items vertically in the center */
+                position: fixed; /* Fixes the navigation at the bottom */
+                bottom: 0; /* Positions it at the bottom */
+                width: 100%; /* Ensures it spans the full width of the viewport */
+                background-color: #fff; /* Background color of the navigation */
+                border-top: 1px solid #ccc; /* Optional: adds a border at the top */
+                padding: 0px 0; /* Optional: adds padding for better spacing */
+                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better separation */
+            }
+            
+            #bottom-nav-container div {
+                flex: 1; /* Each item takes equal space */
+                text-align: center; /* Centers the text */
+                color: #637984; /* Text color */
+                font-size: 11px;
+            }
+            
+            #bottom-nav-container i {
+                display: block; /* Ensures icons are displayed in block format */
+                margin-bottom: 5px; /* Space between icon and text */
+                font-size: 13px; /* Adjusts the size of the icons */
+                text-align: center;
+                margin-left: 10px;
+            }
+            
+            #bottom-nav-menu-home,
+            #bottom-nav-menu-course,
+            #bottom-nav-menu-blogs {
+                padding: 11px 0px;
+            }
+            
+            #bottom-nav-menu-home:hover,
+            #bottom-nav-menu-course:hover,
+            #bottom-nav-menu-blogs:hover {
+                background-color: #f0f4f7;
+            }
+            
+        }
+        
+                @media only screen and (max-width: 1499px) {
+            #header-secondary-container {
+                padding: 0% 9.5%;
+            }
+        }
+        
+        /* css for full desktop screen */
+        @media only screen and (max-width: 1399px) {
+            #header-secondary-container {
+                padding: 0% 7%;
+            }
+        }
+        
+        @media only screen and (max-width: 1299px) {
+            #header-secondary-container {
+                padding: 0% 3%;
+            }
+        }
+        
+        @media only screen and (max-width: 799px) {
+            #header-authentication-btns-container {
+                font-size: 13px;
+            }
+        }
+        
+        @media only screen and (min-width: 300px) and (max-width: 380px){
+            #login-form-container,
+            #register-form-container{
+                width: 90.5%;
+            }
+        }
+        
+        @media only screen and (min-width: 381px) and (max-width: 450px){
+            #login-form-container,
+            #register-form-container{
+                width: 91.5%;
+            }
+            
+            #login-rect-text,
+            #login-name-feild,
+            #login-password-feild,
+            #login-submit-btn,
+            #registration-screen-1-rect-text,
+            #registration-email-feild,
+            #registration-phone-feild-container,
+            #registration-screen-1-next-button,
+            #registration-verfication-code-feild,
+            #registration-screen-2-rect-text,
+            #registration-screen-2-verify-button,
+            #registration-screen-2-back-to-screen-1-button,
+            #registration-password-feild,
+            #registration-screen-3-next-button,
+            #registration-screen-3-rect-text,
+            #registration-fname-feild,
+            #registration-lname-feild,
+            #registration-screen-4-rect-text,
+            #registration-screen-4-save-button,
+            #registration-status-text,
+            #registration-status-icon{
+                width: 80%;
+            }
+        }
+        
+        @media only screen and (min-width: 451px) and (max-width: 600px){
+            #login-form-container,
+            #register-form-container{
+                width: 93.5%;
+            }
+            
+            #login-rect-text,
+            #login-name-feild,
+            #login-password-feild,
+            #login-submit-btn,
+            #registration-screen-1-rect-text,
+            #registration-email-feild,
+            #registration-phone-feild-container,
+            #registration-screen-1-next-button,
+            #registration-verfication-code-feild,
+            #registration-screen-2-rect-text,
+            #registration-screen-2-verify-button,
+            #registration-screen-2-back-to-screen-1-button,
+            #registration-password-feild,
+            #registration-screen-3-next-button,
+            #registration-screen-3-rect-text,
+            #registration-fname-feild,
+            #registration-lname-feild,
+            #registration-screen-4-rect-text,
+            #registration-screen-4-save-button,
+            #registration-status-text,
+            #registration-status-icon{
+                width: 70%;
+            }
+        }
+        
+         @media only screen and (min-width: 601px) and (max-width: 798px) {
+            #login-form-container,
+            #register-form-container{
+                width: 95%;
+            }
+            
+            #login-rect-text,
+            #login-name-feild,
+            #login-password-feild,
+            #login-submit-btn,
+            #registration-screen-1-rect-text,
+            #registration-email-feild,
+            #registration-phone-feild-container,
+            #registration-screen-1-next-button,
+            #registration-verfication-code-feild,
+            #registration-screen-2-rect-text,
+            #registration-screen-2-verify-button,
+            #registration-screen-2-back-to-screen-1-button,
+            #registration-password-feild,
+            #registration-screen-3-next-button,
+            #registration-screen-3-rect-text,
+            #registration-fname-feild,
+            #registration-lname-feild,
+            #registration-screen-4-rect-text,
+            #registration-screen-4-save-button,
+            #registration-status-text,
+            #registration-status-icon{
+                width: 60%;
+            }
+        }
+        
+        @media only screen and (min-width: 300px) and (max-width: 799px) {
+            #header-authentication-btns-container {
+                font-size: 13px;
+            }
+        }
+        
+        @media only screen and (min-width: 800px) and (max-width: 1299px) {
+            #header-secondary-container {
+                padding: 0% 3%;
+            }
+            #login-form-container,
+            #register-form-container{
+                width: 40%;
+            }
+            
+            #login-rect-text,
+            #login-name-feild,
+            #login-password-feild,
+            #login-submit-btn,
+            #registration-screen-1-rect-text,
+            #registration-email-feild,
+            #registration-phone-feild-container,
+            #registration-screen-1-next-button,
+            #registration-verfication-code-feild,
+            #registration-screen-2-rect-text,
+            #registration-screen-2-verify-button,
+            #registration-screen-2-back-to-screen-1-button,
+            #registration-password-feild,
+            #registration-screen-3-next-button,
+            #registration-screen-3-rect-text,
+            #registration-fname-feild,
+            #registration-lname-feild,
+            #registration-screen-4-rect-text,
+            #registration-screen-4-save-button,
+            #registration-status-text,
+            #registration-status-icon{
+                width: 60%;
+            }
+        }
+        
+        @media only screen and (min-width: 1300px) and (max-width: 1399px) {
+            #header-secondary-container {
+                padding: 0% 7%;
+            }
+            
+            #login-rect-text,
+            #login-name-feild,
+            #login-password-feild,
+            #login-submit-btn,
+            #registration-screen-1-rect-text,
+            #registration-email-feild,
+            #registration-phone-feild-container,
+            #registration-screen-1-next-button,
+            #registration-verfication-code-feild,
+            #registration-screen-2-rect-text,
+            #registration-screen-2-verify-button,
+            #registration-screen-2-back-to-screen-1-button,
+            #registration-password-feild,
+            #registration-screen-3-next-button,
+            #registration-screen-3-rect-text,
+            #registration-fname-feild,
+            #registration-lname-feild,
+            #registration-screen-4-rect-text,
+            #registration-screen-4-save-button,
+            #registration-status-text,
+            #registration-status-icon{
+                width: 70%;
+            }
+        }
+        
+        @media only screen and (min-width: 1400px) and (max-width: 1499px) {
+            #header-secondary-container {
+                padding: 0% 9.5%;
+            }
+            
+            #login-rect-text,
+            #login-name-feild,
+            #login-password-feild,
+            #login-submit-btn,
+            #registration-screen-1-rect-text,
+            #registration-email-feild,
+            #registration-phone-feild-container,
+            #registration-screen-1-next-button,
+            #registration-verfication-code-feild,
+            #registration-screen-2-rect-text,
+            #registration-screen-2-verify-button,
+            #registration-screen-2-back-to-screen-1-button,
+            #registration-password-feild,
+            #registration-screen-3-next-button,
+            #registration-screen-3-rect-text,
+            #registration-fname-feild,
+            #registration-lname-feild,
+            #registration-screen-4-rect-text,
+            #registration-screen-4-save-button,
+            #registration-status-text,
+            #registration-status-icon{
+                width: 60%;
+            }
+        }
+        
+        @media only screen and (min-width: 1500px) and (max-width: 1700px){
+            #login-rect-text,
+            #login-name-feild,
+            #login-password-feild,
+            #login-submit-btn,
+            #registration-screen-1-rect-text,
+            #registration-email-feild,
+            #registration-phone-feild-container,
+            #registration-screen-1-next-button,
+            #registration-verfication-code-feild,
+            #registration-screen-2-rect-text,
+            #registration-screen-2-verify-button,
+            #registration-screen-2-back-to-screen-1-button,
+            #registration-password-feild,
+            #registration-screen-3-next-button,
+            #registration-screen-3-rect-text,
+            #registration-fname-feild,
+            #registration-lname-feild,
+            #registration-screen-4-rect-text,
+            #registration-screen-4-save-button,
+            #registration-status-text,
+            #registration-status-icon{
+                width: 60%;
+            }
+        }
+        
+        
+        
+    </style>
+    
+</head>
+<body>
+
+<!-- header -->
+<div id="header-primary-container" class="poppins-regular">
+    
+    <div id="header-secondary-container">
+        
+        <!-- logo -->
+        <div id="header-logo-container" onclick="openMyPage('https://www.nismwala.com')">
+            <div id="header-logo-first">NISM</div>
+            <div id="header-logo-second">wala.com</div>
+        </div>
+        
+        <!-- header navigation menu -->
+        <div id="header-nav-container">
+            <div class="header-nav-menu home-nav" onclick="openMyPage('https://www.nismwala.com')">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </div>
+            <div class="header-nav-menu course-nav" onclick="openMyPage('https://www.nismwala.com/courses/')">
+                <i class="fa-solid fa-laptop"></i>
+                Courses
+            </div>
+            <div class="header-nav-menu blogs-nav" onclick="openMyPage('https://www.nismwala.com/blogs')">
+                <i class="fa-solid fa-newspaper"></i>
+                Blogs
+            </div>
+        </div>
+        
+        <div id='header-profile-icon' onclick='openPage()'>S</div>
+        
+        
+    </div>
+</div>
+
+
+<!-- Bottom navigation for mobile -->
+<div id="bottom-nav-container" class="poppins-regular">
+    <div id="bottom-nav-menu-home" onclick="openMyPage('https://www.nismwala.com')">
+        <i class="fa-solid fa-house"></i>
+        Home
+    </div>
+    <div id="bottom-nav-menu-course" onclick="openMyPage('https://www.nismwala.com/courses')">
+        <i class="fa-solid fa-laptop"></i>
+        Courses
+    </div>
+    <div id="bottom-nav-menu-blogs" onclick="openMyPage('https://www.nismwala.com/blogs')">
+        <i class="fa-solid fa-newspaper"></i>
+        Blogs
+    </div>
+</div>
+
+
+<!-- Slide-in Login Form -->
+<div id="overlay-login" class="poppins-regular"></div>
+<div id="login-form-container">
+    
+    <!-- close button -->
+    <div id="login-form-close">×</div>
+    
+    <!-- login form content -->
+    <div id="login-form-content-container" class="poppins-regular">
+        
+        <!-- login heading -->
+        <div id="auth-heading">Login</div>
+        <!-- login extra feilds-->
+        <div id="login-form-sec-container">
+            <input type="email" class="poppins-regular" id="login-name-feild" placeholder="Email" autocomplete="off">
+            <input type="password" class="poppins-regular" id="login-password-feild" placeholder="Password" autocomplete="off">
+            <div id="login-rect-text">Email or Password Incorrect!</div>
+            <div id="login-submit-btn">Submit</div>
+            <div id="forgot-password-link">Forgot your password? <span style="color: #3c495b; border-bottom: 2px dotted #3c495b;font-weight: 500; cursor: pointer;">Click here to reset it.</span></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Slide-in Register Form -->
+<div id="overlay-register"></div>
+<div id="register-form-container">
+    
+    <!-- close button -->
+    <div id="register-form-close">×</div>
+    
+    <!-- heading of registration screeen -->
+    <div id="registration-heading" class="poppins-regular">Registration</div>
+    
+    <!-- screen 1 -->
+    <div id="registration-form-screen-1-container" class="poppins-regular">
+        
+        <!-- email -->
+        <input type="email" placeholder="Email" class="poppins-regular" id="registration-email-feild" autocomplete="off">
+        
+        <!-- phone number -->
+        <div id="registration-phone-feild-container">
+            <div id="registration-phone-feild-flag-container">
+                <img src="https://nismwala.com/web-images/india-flag-24x24.png" id="registration-phone-feild-flag">
+            </div>
+            <div id="registration-phone-input-container">
+                <input type="text" placeholder="Phone no." id="registration-phone-feild" class="poppins-regular" autocomplete="off">
+            </div>
+        </div>
+        
+        <!-- rect text screen 1-->
+        <div id="registration-screen-1-rect-text">Email already existed!</div>
+        
+        <!-- next button screen 1 -->
+        <div id="registration-screen-1-next-button">Next</div>
+        
+    </div>
+    
+    <center>
+    <!-- screen 2 -->
+    <div id="registration-form-screen-2-container" class="poppins-regular">
+        <input type="text" placeholder="Enter verification code" class="poppins-regular" id="registration-verfication-code-feild" autocomplete="off">
+        
+        <!-- rect text screen 2-->
+        <div id="registration-screen-2-rect-text">Hello</div>
+        
+        <!-- next button screen 2 -->
+        <div id="registration-screen-2-verify-button">verify (Code sent to email)</div>
+        
+        <!-- back to email button -->
+        <div id="registration-screen-2-back-to-screen-1-button">Back</div>
+    </div>
+    
+    <!-- screen 3 -->
+    <div id="registration-form-screen-3-container" class="poppins-regular">
+        <input type="text" placeholder="Create a new password" class="poppins-regular" id="registration-password-feild" autocomplet="off">
+        <div id="registration-screen-3-rect-text">Password must be 8+ chars.</div>
+        <div id="registration-screen-3-next-button">Next</div>
+    </div>
+    
+    <!-- screen 4 -->
+    <div id="registration-form-screen-4-container" class="poppins-regular">
+        <input type="text" placeholder="First name" class="poppins-regular" id="registration-fname-feild">
+        <input type="text" placeholder="Last name" class="poppins-regular" id="registration-lname-feild">
+        <div id="registration-screen-4-rect-text">First name is required!</div>
+        <div id="registration-screen-4-save-button">save</div>
+    </div>
+    
+    <!-- screen 5 -->
+    <div id="registration-form-screen-5-container" class="poppins-regular">
+        <div id="registration-status-icon"><i class="fa-solid fa-check"></i></div>
+        <div id="registration-status-text">Registration Successfull</div>
+    </div>
+    </center>
+</div>
+
+<!-- - - - - - - - - - - - Common - - - - -  - - - - - - - - - - -->
+<script>
+
+    // function: Open Profile Page
+    function openPage(){
+        window.open("https://www.nismwala.com/profile","_Self");
+    }
+    
+    // function: Open any page
+    function openMyPage(pageURL){
+        window.open(pageURL,"_Self");
+    }
+    
+    // function: Email validation 
+    function isValidEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+    
+    // function: Phone Number Validation
+    function validatePhoneNumber(phoneNumber) {
+        var regex = /^\d+$/;
+        return regex.test(phoneNumber);
+    }
+    
+    // function: Current Time Picker
+    function storeCurrentClickTime() {
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleString('en-US', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        });
+        const clickTimeString = formattedDate;
+        return clickTimeString;
+    }
+</script>
+
+<!-- - - - - - - - - - - - Login - - - - - - - - - - - - -->
+<script>
+    // function: Login
+    $("#login-submit-btn").on("click", function(){
+        
+        let email = $("#login-name-feild").val();
+        let password = $("#login-password-feild").val();
+        let passwordLength = password.length;
+        
+        if(!isValidEmail(email)){
+            $("#login-rect-text").slideDown().text("Please enter a valid email address.").css("color","red");
+        }else if(password==""){
+            $("#login-rect-text").slideDown().text("Password cannot be empty.").css("color","red");
+        }else{
+            $("#login-rect-text").slideDown().text("Validating credentials, please wait...").css("color","green");    
+            $.ajax({
+                url: '/authentication/login-data-validate.php',
+                type: 'POST',
+                data: {
+                    email: email,
+                    password: password
+                },
+                success: function(responselog){
+                    if(responselog){
+                        location.reload();
+                    }else{
+                        $("#login-rect-text").slideDown().text("Email or Password invalid!").css("color","red");
+                    }
+                }
+            })
+        }
+    });
+    
+    // function : click on forgot password link
+    $("#forgot-password-link").on("click", function(){
+        window.open('https://www.nismwala.com/reset-password/ ','_Self');
+    })
+    
+    document.getElementById('login-form-close').addEventListener('click', function() {
+        document.getElementById('overlay-login').classList.remove('active');
+        document.getElementById('login-form-container').classList.remove('active');
+        $('#login-name-feild').val('');
+        $('#login-password-feild').val('');
+        $('#login-rect-text').slideUp();
+    });
+</script>
+
+<!-- - - - - - - - - - - - - - - -  registration - - - - - - - - - - - - - - -->
+<script>
+    let email_regi = $("#registration-email-feild").val();
+    let phone_no = $("#registration-phone-feild").val();
+    let attempts = 0;
+    let currentClickTime = storeCurrentClickTime();
+    let password_regi = "";
+    let fname = "";
+    let lname = "";
+
+    // validate email wheen user will click on screen 1 next button
+    $("#registration-screen-1-next-button").on("click",function(){
+        
+        email_regi = $("#registration-email-feild").val();
+        phone_no = $("#registration-phone-feild").val();
+        currentClickTime = storeCurrentClickTime();
+        
+        if(!isValidEmail(email_regi)){
+            $("#registration-screen-1-rect-text").slideDown().text("Please enter a valid email address.").css("color","red");
+        }else if((phone_no.length > 10 || phone_no.length < 10)){
+            $("#registration-screen-1-rect-text").slideDown().text("Please enter a valid phone number.").css("color","red");
+        }else if(validatePhoneNumber(phone_no)==false){
+            $("#registration-screen-1-rect-text").slideDown().text("Please enter a valid phone number.").css("color","red");
+        }else{
+            $("#registration-screen-1-rect-text").slideDown().text("Checking if user exists, please wait...").css("color","green");
+            
+            $.ajax({
+            url: '/authentication/email-check.php', // Replace with your server endpoint
+            type: 'POST',
+            data: {email: email_regi},
+            success: function(response) {
+                // Handle success response
+                if(response==true){
+                    
+                    $.ajax({
+                        url: '/mail/send-registration-verification-code-mail.php',
+                        type: 'POST',
+                        data: { 
+                            email: email_regi,
+                            time: currentClickTime
+                        },
+                        success: function(response2){
+                            if(response2){
+                                $("#registration-form-screen-1-container").hide();
+                                $("#registration-form-screen-2-container").show();
+                            }else{
+                                $("#registration-screen-1-rect-text").slideDown().text("Facing problem. Connect after some time.").css("color","red");
+                            }
+                        }
+                    })
+                }else{
+                    $("#registration-screen-1-rect-text").slideDown().text("This email is already registered.").css("color","red");
+                }
+            }
+        });
+        }
+    })
+
+    $("#registration-screen-2-verify-button").on("click", function() {
+        let veri_code_input = $("#registration-verfication-code-feild").val();
+        attempts++;
+    
+        if (attempts <= 5) {
+            
+            $.ajax({
+                url: '/authentication/check-code.php',
+                type: 'POST',
+                data: {
+                    email: email_regi,
+                    code:veri_code_input,
+                    time:currentClickTime
+                },
+                success: function(response){
+                    if(response==1){
+                        $("#registration-form-screen-3-container").show();
+                        $("#registration-form-screen-2-container").hide();
+                    }else{
+                        let attemptsLeft = 5 - attempts;
+                        if (attemptsLeft > 0) {
+                            $("#registration-screen-2-rect-text").slideDown().text(`Wrong code. ${attemptsLeft} attempts left.`).css("color", "red");
+                        } else {
+                            $("#registration-screen-2-rect-text").slideDown().text("No attempts left. Please try again later.").css("color", "red");
+                            window.location.replace('http://nismwala.com','_Self');
+                        }
+                    }
+                }
+            });
+        }
+    });
+    
+    $("#registration-screen-2-back-to-screen-1-button").on("click",function(){
+        $("#registration-form-screen-1-container").show();
+        $("#registration-form-screen-2-container").hide();
+        $("#registration-screen-1-next-button").text("send new verification code");
+        $("#registration-screen-1-rect-text").hide();
+        attempts = 0;
+        $("#registration-verfication-code-feild").val("");
+        $("#registration-screen-2-rect-text").hide();
+    })
+    
+    $("#registration-screen-3-next-button").on("click",function(){
+        let pass_regi = $("#registration-password-feild").val();
+        if(pass_regi.length>=8){
+            password_regi = $("#registration-password-feild").val();
+            $("#registration-form-screen-3-container").hide();
+            $("#registration-form-screen-4-container").show();
+        }else{
+            $("#registration-screen-3-rect-text").slideDown().text("Password must be 8+ chars.").css("color","red")
+        }
+    });
+    
+    $("#registration-screen-4-save-button").on("click", function() {
+    fname = $("#registration-fname-feild").val();
+    lname = $("#registration-lname-feild").val();
+    if (fname == "") {
+        $("#registration-screen-4-rect-text").slideDown().css("color", "red");
+    } else {
+        $.ajax({
+            url: '/authentication/registration-data-save.php',
+            type: 'POST',
+            data: {
+                email: email_regi,
+                fname: fname,
+                lname: lname,
+                phone: phone_no,
+                password: password_regi
+            },
+            success: function(response) {
+                if (response==1) {
+                    $("#registration-form-screen-4-container").hide();
+                    $("#registration-form-screen-5-container").show();
+                    // Delay the redirection by 3 seconds
+                    setTimeout(function() {
+                        location.reload();
+                    }, 3000);
+                } else {
+                    $("#registration-form-screen-3-container").hide();
+                    $("#registration-form-screen-4-container").show();
+                    $("#registration-status-icon").html("<i class='fa-solid fa-xmark'></i>").css("background", "red");
+                    $("#registration-status-text").text("Registration Unsuccessful! Please try Again!");
+                }
+            }
+        });
+    }
+});
+
+document.getElementById('register-form-close').addEventListener('click', function() {
+        document.getElementById('overlay-register').classList.remove('active');
+        document.getElementById('register-form-container').classList.remove('active');
+        $('#registration-email-feild').val('');
+        $('#registration-screen-1-next-button').text('Next');
+        $('#registration-phone-feild').val('');
+        $('#registration-form-screen-1-container').show();
+        $('#registration-form-screen-2-container').hide();
+        $('#registration-form-screen-3-container').hide();
+        $('#registration-form-screen-4-container').hide();
+        $('#registration-form-screen-5-container').hide();
+        $('#registration-screen-1-rect-text').hide();
+        $('#registration-verfication-code-feild').val('');
+        $('#registration-password-feild').val('');
+        attempts = 0;
+        $('#registration-screen-2-rect-text').hide();
+        $('#registration-screen-3-rect-text').hide();
+        $('#registration-screen-4-rect-text').hide();
+    });
+</script>
+
+</body>
+</html>
+
+    
+    <div id="courses-primary-container" class="poppins-regular">
+        <!--<div id="con">-->
+            <div id="courses-thumbnail-container">
+                <img src="https://img.freepik.com/free-vector/back-end-typographic-header-software-development-process-website-interface-design-improvement-programming-coding-it-profession-isolated-flat-vector-illustration_613284-210.jpg" alt="Thumbnail for Backend Development" id="courses-thumbnail">
+            </div>
+            
+            <div id="courses-title">Backend Development</div>
+            
+            <div id="courses-description">Short description for Backend Development</div>
+            
+            <div id="courses-button-container">
+                <div id="courses-price-button">Price: ₹ 150/-</div>
+                <div id="coueses-buy-button" onclick="window.open('https://www.nismwala.com/buy/?courseID=2','_Self')">Buy Now</div>
+            </div>
+            
+            <div id="courses-usp-containers">
+                <li id="course-usp">Unique selling point 1 for Backend Development</li>
+                <li id="course-usp">Unique selling point 2 for Backend Development</li>
+                <li id="course-usp">Unique selling point 3 for Backend Development</li>
+                <li id="course-usp">Unique selling point 4 for Backend Development</li>
+                <li id="course-usp">Unique selling point 5 for Backend Development</li>
+            </div>
+            
+            <div id="courses-brochure-container" onclick="download()">
+                <div id="courses-brochure-text">Download Brochure</div>
+                <div id="courses-brochure-download-icon"><i class="fa-solid fa-floppy-disk"></i></div>
+            </div>
+            
+            <div id="courses-faq-container" style="width: 100%">
+                <div id="courses-faq-heading">FAQ</div>
+                
+                <div id="faq1" class="courses-faq-q-container">
+                    <div class="courses-faq-q-question-container">
+                        <div>FAQ 1 for Backend Development</div>
+                        <div class="courses-faq-q-more-icon-container"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="courses-faq-q-answer-container">
+                        Answer to FAQ 1 for Backend Development                    </div>
+                </div>
+                
+                <div id="faq2" class="courses-faq-q-container">
+                    <div class="courses-faq-q-question-container">
+                        <div>FAQ 2 for Backend Development</div>
+                        <div class="courses-faq-q-more-icon-container"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="courses-faq-q-answer-container">
+                        Answer to FAQ 2 for Backend Development                    
+                    </div>
+                </div>
+                
+                <div id="faq3" class="courses-faq-q-container">
+                    <div class="courses-faq-q-question-container">
+                        <div>FAQ 3 for Backend Development</div>
+                        <div class="courses-faq-q-more-icon-container"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="courses-faq-q-answer-container">
+                        Answer to FAQ 3 for Backend Development                    </div>
+                </div>
+                
+                <div id="faq4" class="courses-faq-q-container">
+                    <div class="courses-faq-q-question-container">
+                        <div>FAQ 4 for Backend Development</div>
+                        <div class="courses-faq-q-more-icon-container"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="courses-faq-q-answer-container">
+                        Answer to FAQ 4 for Backend Development                    </div>
+                </div>
+                
+                <div id="faq5" class="courses-faq-q-container">
+                    <div class="courses-faq-q-question-container">
+                        <div>FAQ 5 for Backend Development</div>
+                        <div class="courses-faq-q-more-icon-container"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="courses-faq-q-answer-container">
+                        Answer to FAQ 5 for Backend Development                    </div>
+                </div>
+            </div>
+            
+            <br><br><br><br>
+        </div>
+    </div>
+    
+    <script>
+        function download() {
+            const fileUrl = '';
+            const anchor = document.createElement('a');
+            anchor.href = fileUrl;
+            anchor.download = 'nismwala-broucher.pdf';
+            anchor.click();
+        }
+    </script>
+</body>
+</html>
