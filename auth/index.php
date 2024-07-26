@@ -390,7 +390,7 @@
                                     });
           console.log(10);
           $.ajax({
-                url:'/gmw/auth/check-mail.php',
+                url:'check-mail.php',
                 type:'POST',
                 data:{
                     email:email

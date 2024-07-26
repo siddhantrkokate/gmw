@@ -1,6 +1,6 @@
 <?php
 
-include("/gmw/api/connection.php");
+include("../../../api/connection.php");
 
 if (isset($_POST["contentID"]) && isset($_POST["moduleName"])) {
     

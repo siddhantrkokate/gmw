@@ -1,7 +1,7 @@
 <?php
 
 $pdf = $_GET['pdf'];
-$pdfURL = "/gmw/pdf/".$pdf;
+$pdfURL = "../pdf/".$pdf;
 
 ?>
 <!DOCTYPE html>

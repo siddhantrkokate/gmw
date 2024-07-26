@@ -1,6 +1,6 @@
 <?php
 // Include database connection
-include("/gmw/api/connection.php");
+include("../api/connection.php");
 
 if (isset($_POST["email"]) && isset($_POST["code"])) {
     $email = $_POST["email"];
