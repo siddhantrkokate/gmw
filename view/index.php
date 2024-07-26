@@ -329,17 +329,18 @@ if (mysqli_num_rows($q1) > 0) {
             display:none;
         }
         
-        .toast {
-            background-color: #424949;
-            color: #FFF;
-            margin: 20px;
+        .toast{
             position: fixed;
             bottom: 0;
-            margin-bottom: 100px;
-            padding: 20px 20px;
-            width: calc(100% - 80px);
-            font-size: 12px;
+            margin: 20px;
+            margin-bottom: 85px;
+            padding: 15px 20px;
+            background-color: #2e2e2e;
+            color: #e0e0e0;
+            font-size: 13px;
             border-radius: 5px;
+            width: calc(100% - 40px);
+            box-sizing: border-box;
             display: none;
         }
         
@@ -362,6 +363,10 @@ if (mysqli_num_rows($q1) > 0) {
             .screen {
                 width: 40%;
             }
+
+            .toast{
+                width: calc(40% - 40px);
+            }
         }
 
         @media screen and (min-width: 1100px) and (max-width: 1299px) {
@@ -375,6 +380,10 @@ if (mysqli_num_rows($q1) > 0) {
             .screen {
                 width: 60%;
             }
+
+            .toast{
+                width: calc(60% - 40px);
+            }
         }
 
         @media screen and (min-width: 900px) and (max-width: 1099px) {
@@ -387,6 +396,10 @@ if (mysqli_num_rows($q1) > 0) {
 
             .screen {
                 width: 70%;
+            }
+
+            .toast{
+                width: calc(70% - 40px);
             }
         }
     </style>
@@ -523,7 +536,7 @@ if (mysqli_num_rows($q1) > 0) {
                         </div>
                 <?php } ?>
 
-
+                                        <br>
                 <script>
                 
                     $('.unsave').hide();

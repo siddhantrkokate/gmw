@@ -114,17 +114,18 @@ if (isset($_GET['contentID']) && isset($_GET['moduleID'])) {
             display: none;
         }
         
-        .toast {
-            background-color: #424949;
-            color: #FFF;
-            margin: 20px;
+        .toast{
             position: fixed;
             bottom: 0;
-            margin-bottom: 20px;
-            padding: 20px 20px;
-            width: calc(100% - 80px);
-            font-size: 12px;
+            margin: 20px;
+            margin-bottom: 85px;
+            padding: 15px 20px;
+            background-color: #2e2e2e;
+            color: #e0e0e0;
+            font-size: 13px;
             border-radius: 5px;
+            width: calc(100% - 40px);
+            box-sizing: border-box;
             display: none;
         }
 
@@ -141,7 +142,7 @@ if (isset($_GET['contentID']) && isset($_GET['moduleID'])) {
             }
 
             .toast {
-                width: calc(40% - 80px);
+                width: calc(40% - 40px);
             }
         }
 
@@ -158,7 +159,7 @@ if (isset($_GET['contentID']) && isset($_GET['moduleID'])) {
             }
 
             .toast {
-                width: calc(60% - 80px);
+                width: calc(60% - 40px);
             }
         }
 
@@ -175,7 +176,7 @@ if (isset($_GET['contentID']) && isset($_GET['moduleID'])) {
             }
 
             .toast {
-                width: calc(70% - 80px);
+                width: calc(70% - 40px);
             }
         }
     </style>
@@ -190,10 +191,10 @@ if (isset($_GET['contentID']) && isset($_GET['moduleID'])) {
                 <div class="save-btn">Save</div>
                 <div class="close-btn">Close</div>
             </div>
+            <div class="toast"></div>
         </div>
     </div>
     
-    <div class="toast"></div>
 
     <div class="content-id"><?php echo htmlspecialchars($contentID); ?></div>
     <div class="module-id"><?php echo htmlspecialchars($moduleID); ?></div>

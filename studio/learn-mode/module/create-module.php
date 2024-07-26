@@ -106,17 +106,18 @@
             display: none;
         }
         
-        .toast {
-            background-color: #424949;
-            color: #FFF;
-            margin: 20px;
+        .toast{
             position: fixed;
             bottom: 0;
-            margin-bottom: 20px;
-            padding: 20px 20px;
-            width: calc(100% - 80px);
-            font-size: 12px;
+            margin: 20px;
+            margin-bottom: 85px;
+            padding: 15px 20px;
+            background-color: #2e2e2e;
+            color: #e0e0e0;
+            font-size: 13px;
             border-radius: 5px;
+            width: calc(100% - 40px);
+            box-sizing: border-box;
             display: none;
         }
         

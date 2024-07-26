@@ -139,19 +139,22 @@
         .module-name, .title, .topic-id, .content-id {
             display: none;
         }
-        .toast {
-            background-color: #424949;
-            color: #FFF;
-            margin: 20px;
+        
+        .toast{
             position: fixed;
             bottom: 0;
-            margin-bottom: 20px;
-            padding: 20px 20px;
-            width: calc(100% - 80px);
-            font-size: 12px;
+            margin: 20px;
+            margin-bottom: 85px;
+            padding: 15px 20px;
+            background-color: #2e2e2e;
+            color: #e0e0e0;
+            font-size: 13px;
             border-radius: 5px;
+            width: calc(100% - 40px);
+            box-sizing: border-box;
             display: none;
         }
+
         @media screen and (min-width: 1300px) {
             .main-screen {
                 display: flex;
@@ -163,7 +166,7 @@
                 width: 40%;
             }
             .toast {
-                width: calc(40% - 80px);
+                width: calc(40% - 40px);
             }
         }
         @media screen and (min-width: 1100px) and (max-width: 1299px) {
@@ -177,7 +180,7 @@
                 width: 60%;
             }
             .toast {
-                width: calc(60% - 80px);
+                width: calc(60% - 40px);
             }
         }
         @media screen and (min-width: 900px) and (max-width: 1099px) {
@@ -191,7 +194,7 @@
                 width: 70%;
             }
             .toast {
-                width: calc(70% - 80px);
+                width: calc(70% - 40px);
             }
         }
     </style>
@@ -211,11 +214,11 @@
                 <div class="save-btn">Save</div>
                 <div class="close-btn" title="Open Modules">close</div>
             </div>
+            <div class="toast"></div>
         </div>
     </div>
     <div class="module-id"><?php echo $moduleID; ?></div>
     <div class="content-id"><?php echo $contentID; ?></div>
-    <div class="toast"></div>
     <script>
         var moduleID = $(".module-id").text();
         var moduleName = $(".module-name").text();
