@@ -215,6 +215,10 @@
             .header{
                 width: 40%;
             }
+
+            .toast{
+                width: calc(100% - 40px);
+            }
         }
         
         @media screen and (min-width: 1100px) and (max-width: 1299px){
@@ -232,6 +236,10 @@
             .header{
                 width: 60%;
             }
+
+            .toast{
+                width: calc(100% - 60px);
+            }
         }
         
         @media screen and (min-width: 900px) and (max-width: 1099px){
@@ -248,6 +256,10 @@
             
             .header{
                 width: 70%;
+            }
+
+            .toast{
+                width: calc(100% - 70px);
             }
         }
     </style>
