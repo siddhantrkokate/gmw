@@ -49,7 +49,7 @@ More about levels [PDF.](https://drive.google.com/file/d/1JpkPRrqNSuFNoiTQTxzjiP
 
 ## Steps to Access Project 💼
 
-- Download [Repo.](https://github.com/siddhantrkokate/gmw/archive/refs/heads/master.zip)
+- Download [Repo.](https://github.com/siddhantrkokate/gmw/archive/refs/heads/master.zip).
 
 - Create Database name `gmw`
 
