@@ -2,5 +2,5 @@
     
     include("api/connection.php");
 
-    header("location:/gmw-master/home");
+    header("location:home/");
 ?>
