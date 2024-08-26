@@ -51,12 +51,10 @@ More about levels [PDF.](https://drive.google.com/file/d/1JpkPRrqNSuFNoiTQTxzjiP
 
 - Download [Repo.](https://github.com/siddhantrkokate/gmw/archive/refs/heads/master.zip).
 
-- Create Database name `gmw`
+- Run these give SQL Queries in the [file.](https://github.com/siddhantrkokate/gmw/blob/master/u919348121_GMW.sql)
 
-- Import this SQL [file.](https://github.com/siddhantrkokate/gmw/blob/master/u919348121_GMW.sql)
-
-- All set! Now start to contribute on it!
+- All set! Now experiance it!
 ## Contact
 
-- Email: [siddhantrkokate@gmail.com](siddhantrkokate@gmail.com)
+- Make Feedback on Email: [siddhantrkokate@gmail.com](siddhantrkokate@gmail.com)
 
